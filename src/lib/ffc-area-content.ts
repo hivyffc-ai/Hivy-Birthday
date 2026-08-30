@@ -550,14 +550,16 @@ export default generateAreaPageUniqueContent;
 // =========================================================================
 // Astro FFC Component Compatibility Wrapper: getAreaContent
 // =========================================================================
-import { siteConfig } from './ffc-config';
-import { areaDisplayNames } from './domains-config';
+import { areaDisplayNames, domains, getDomainBySlug } from './domains-config';
 
 export function getAreaContent(slug: string): any {
   const cleanKey = slug.replace('-surat', '').replace('-vadodara', '');
   const areaName = areaDisplayNames[cleanKey] || (cleanKey.charAt(0).toUpperCase() + cleanKey.slice(1));
-  
-  const content = generateAreaPageUniqueContent(siteConfig, areaName, slug);
+
+  const domain = getDomainBySlug('birthday-surprise-surat') || domains[0];
+  if (!domain) return null;
+
+  const content = generateAreaPageUniqueContent(domain, areaName, slug);
   if (!content) return null;
   
   // Extract values from sections for FFC layout compatibility
