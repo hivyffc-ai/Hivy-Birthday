@@ -7,7 +7,7 @@
  * - Unique content per keyword + domain combination
  */
 
-import { DomainConfig, suratAreas, suratAreas, KeywordConfig } from './domains-config';
+import { DomainConfig, suratAreas, KeywordConfig } from './domains-config';
 
 export interface KeywordPageUniqueContent {
   heroTitle: string;
