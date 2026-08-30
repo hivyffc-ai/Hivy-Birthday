@@ -543,3 +543,7 @@ export function generateKeywordPageUniqueContent(
 }
 
 export default generateKeywordPageUniqueContent;
+
+export function getKeywordContent(slug: string): KeywordPageUniqueContent | null {
+  return null;
+}

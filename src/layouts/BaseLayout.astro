@@ -15,7 +15,7 @@ export interface Props {
 
 const SITE_URL = 'https://friendsfactorycafe.com';
 const DEFAULT_TITLE =
-  'Friends Factory Cafe Surat | Best Romantic Celebration Venue | Candlelight Dinners & Birthday Surprises';
+  `${siteConfig.name} Surat | Best Romantic Celebration Venue | Candlelight Dinners & Birthday Surprises`;
 const DEFAULT_DESCRIPTION =
   'Best romantic celebration venue in Surat, Gujarat. Birthday surprises, candlelight dinners, anniversary celebrations, proposals, pre-wedding shoots. 100% private rooftop & glass house. Starting ₹6,900. Call +91 74878 88730.';
 const DEFAULT_KEYWORDS = [
@@ -51,7 +51,7 @@ const {
   keywords = DEFAULT_KEYWORDS,
   canonicalPath = '/',
   ogImage = '/images/og-image.jpg',
-  ogImageAlt = 'Friends Factory Cafe - Best Romantic Celebrations in Surat',
+  ogImageAlt = `${siteConfig.name} - Best Romantic Celebrations in Surat`,
   noTemplate = false,
   extraJsonLd,
 } = Astro.props;
@@ -60,7 +60,7 @@ const pageTitle = !title
   ? DEFAULT_TITLE
   : noTemplate
     ? title
-    : `${title} | Friends Factory Cafe Surat`;
+    : `${title} | ${siteConfig.name} Surat`;
 const canonicalUrl = `${SITE_URL}${canonicalPath === '/' ? '' : canonicalPath}`;
 
 const jsonLd = {
@@ -69,8 +69,8 @@ const jsonLd = {
     {
       '@type': 'LocalBusiness',
       '@id': 'https://friendsfactorycafe.com/#business',
-      name: 'Friends Factory Cafe',
-      alternateName: 'Friends Factory Cafe Surat',
+      name: siteConfig.name,
+      alternateName: `${siteConfig.name} Surat`,
       description:
         'Best romantic celebration venue in Surat, Gujarat. Birthday surprises, candlelight dinners, anniversary celebrations, proposals, pre-wedding shoots. 100% private rooftop & glass house experiences.',
       url: 'https://friendsfactorycafe.com',
@@ -157,7 +157,7 @@ const jsonLd = {
       '@type': 'WebSite',
       '@id': 'https://friendsfactorycafe.com/#website',
       url: 'https://friendsfactorycafe.com',
-      name: 'Friends Factory Cafe',
+      name: siteConfig.name,
       description: 'Best romantic celebration venue in Surat',
       publisher: { '@id': 'https://friendsfactorycafe.com/#business' },
       potentialAction: {
@@ -172,7 +172,7 @@ const jsonLd = {
     {
       '@type': 'Organization',
       '@id': 'https://friendsfactorycafe.com/#organization',
-      name: 'Friends Factory Cafe',
+      name: siteConfig.name,
       url: 'https://friendsfactorycafe.com',
       logo: {
         '@type': 'ImageObject',
@@ -210,9 +210,9 @@ const jsonLd = {
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords.join(', ')} />
-    <meta name="author" content="Friends Factory Cafe" />
-    <meta name="creator" content="Friends Factory Cafe" />
-    <meta name="publisher" content="Friends Factory Cafe" />
+    <meta name="author" content={siteConfig.name} />
+    <meta name="creator" content={siteConfig.name} />
+    <meta name="publisher" content={siteConfig.name} />
     <link rel="canonical" href={canonicalUrl} />
     <meta name="category" content="Restaurant" />
     <meta name="classification" content="Romantic Celebration Venue" />
@@ -220,7 +220,7 @@ const jsonLd = {
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_IN" />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:site_name" content="Friends Factory Cafe" />
+    <meta property="og:site_name" content={siteConfig.name} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
@@ -266,7 +266,7 @@ const jsonLd = {
       })();
     </script>
   </head>
-  <body class="font-sans antialiased" data-whatsapp-number={siteConfig.whatsapp} data-site-city={siteConfig.city}>
+  <body class="font-sans antialiased" data-whatsapp-number={siteConfig.whatsapp} data-site-city={siteConfig.city} data-site-name={siteConfig.name}>
     <slot />
     <script defer src="/_vercel/insights/script.js"></script>
   </body>

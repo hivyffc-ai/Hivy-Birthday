@@ -26,7 +26,7 @@ function generateArticleContent(post: BlogPost): string {
   const contentTemplates: { [key: string]: string } = {
     'Birthday': `
       <h2>Make Their Birthday Unforgettable</h2>
-      <p>Birthdays are special occasions that deserve memorable celebrations. At Friends Factory Cafe in Surat, we specialize in creating magical birthday experiences that your loved ones will cherish forever.</p>
+      <p>Birthdays are special occasions that deserve memorable celebrations. At ${siteConfig.name} in Surat, we specialize in creating magical birthday experiences that your loved ones will cherish forever.</p>
 
       <h3>Why Choose a Rooftop Birthday Celebration?</h3>
       <p>There's something magical about celebrating under the stars. Our rooftop venue offers:</p>
@@ -37,7 +37,7 @@ function generateArticleContent(post: BlogPost): string {
         <li><strong>Perfect Photos</strong> - Instagram-worthy setups for memories</li>
       </ul>
 
-      <h3>Birthday Surprise Ideas at Friends Factory Cafe</h3>
+      <h3>Birthday Surprise Ideas at ${siteConfig.name}</h3>
       <p>From midnight surprises to elaborate themed decorations, we can help you plan the perfect birthday celebration:</p>
       <ol>
         <li><strong>Midnight Surprise</strong> - Bring them at 11:30 PM for a cake cutting at midnight</li>
@@ -55,7 +55,7 @@ function generateArticleContent(post: BlogPost): string {
     `,
     'Proposal': `
       <h2>Planning the Perfect Proposal in Surat</h2>
-      <p>A marriage proposal is one of life's most meaningful moments. At Friends Factory Cafe, we've helped countless couples create their perfect "yes" moment on our beautiful rooftop.</p>
+      <p>A marriage proposal is one of life's most meaningful moments. At ${siteConfig.name}, we've helped countless couples create their perfect "yes" moment on our beautiful rooftop.</p>
 
       <h3>Why Our Rooftop is Perfect for Proposals</h3>
       <p>The setting of your proposal matters. Here's why couples choose our venue:</p>
@@ -90,7 +90,7 @@ function generateArticleContent(post: BlogPost): string {
     `,
     'Anniversary': `
       <h2>Celebrate Your Love Story</h2>
-      <p>Every anniversary marks another beautiful chapter in your love story. Whether it's your 1st or 50th, Friends Factory Cafe offers the perfect setting to celebrate your journey together.</p>
+      <p>Every anniversary marks another beautiful chapter in your love story. Whether it's your 1st or 50th, ${siteConfig.name} offers the perfect setting to celebrate your journey together.</p>
 
       <h3>Why Celebrate Your Anniversary at Our Rooftop?</h3>
       <p>An anniversary deserves more than just dinner at a regular restaurant:</p>
@@ -136,7 +136,7 @@ function generateArticleContent(post: BlogPost): string {
         <li><strong>Photo Date</strong> - Capture your love story</li>
       </ol>
 
-      <h3>Making It Special at Friends Factory Cafe</h3>
+      <h3>Making It Special at ${siteConfig.name}</h3>
       <p>Our rooftop offers the perfect setting for an unforgettable date night. With customizable setups, delicious food, and a romantic atmosphere, every visit can be a new adventure in your love story.</p>
     `,
     'Pre-Wedding': `
@@ -153,7 +153,7 @@ function generateArticleContent(post: BlogPost): string {
       </ul>
 
       <h3>Why Choose Our Rooftop for Pre-Wedding Shoots?</h3>
-      <p>Friends Factory Cafe offers unique advantages:</p>
+      <p>${siteConfig.name} offers unique advantages:</p>
       <ol>
         <li>Complete privacy for comfortable poses</li>
         <li>Beautiful fairy lights and decor</li>
@@ -186,7 +186,7 @@ function generateArticleContent(post: BlogPost): string {
         <li>Coordinate gifts and registry</li>
       </ol>
 
-      <h3>Why Choose Friends Factory Cafe?</h3>
+      <h3>Why Choose ${siteConfig.name}?</h3>
       <p>Our intimate rooftop setting is perfect for baby showers with its beautiful decor, comfortable seating, and customizable setups for this special celebration.</p>
     `,
     'Baby': `
@@ -234,7 +234,7 @@ function generateArticleContent(post: BlogPost): string {
         <li><strong>Privacy</strong> - Comfortable for intimate conversations</li>
       </ul>
 
-      <h3>Friends Factory Cafe: Beyond a Restaurant</h3>
+      <h3>${siteConfig.name}: Beyond a Restaurant</h3>
       <p>We're not just a restaurant – we're a celebration destination. Our rooftop offers private dining experiences with customizable setups for any occasion.</p>
     `,
     'Corporate': `
@@ -353,7 +353,7 @@ function generateArticleContent(post: BlogPost): string {
       </ul>
 
       <h3>Why Our Venue is Perfect</h3>
-      <p>With romantic lighting, private setting, and beautiful decor, Friends Factory Cafe offers the perfect Valentine's Day backdrop.</p>
+      <p>With romantic lighting, private setting, and beautiful decor, ${siteConfig.name} offers the perfect Valentine's Day backdrop.</p>
     `,
     'Wedding': `
       <h2>Intimate Weddings: A Growing Trend</h2>
@@ -377,8 +377,8 @@ function generateArticleContent(post: BlogPost): string {
 
   // Add closing section
   content += `
-    <h2>Visit Friends Factory Cafe</h2>
-    <p>Located at ${siteConfig.address}, Friends Factory Cafe is Surat's premier rooftop celebration venue. We specialize in creating unforgettable moments for couples and families.</p>
+    <h2>Visit ${siteConfig.name}</h2>
+    <p>Located at ${siteConfig.address}, ${siteConfig.name} is Surat's premier rooftop celebration venue. We specialize in creating unforgettable moments for couples and families.</p>
 
     <p>Ready to plan your celebration? <strong>Call us at ${siteConfig.phone}</strong> or WhatsApp to book your special experience today.</p>
   `;
@@ -468,7 +468,7 @@ function formatDate(dateStr: string, opts: Intl.DateTimeFormatOptions) {
           <div class="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
               <h3 class="font-bold text-gray-900 mb-1">Ready to celebrate?</h3>
-              <p class="text-gray-600 text-sm">Book your special moment at Friends Factory Cafe</p>
+              <p class="text-gray-600 text-sm">Book your special moment at {siteConfig.name}</p>
             </div>
             <div class="flex gap-3">
               <Button

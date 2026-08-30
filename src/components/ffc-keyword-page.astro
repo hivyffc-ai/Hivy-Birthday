@@ -63,13 +63,13 @@ const faqItems = hasUniqueContent ? handcraftedContent!.faqs : generatedContent.
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="text-center lg:text-left">
           <Badge class="mb-4 bg-white/20 text-white border-white/30">
-            {service.emoji} Friends Factory Cafe
+            {service.emoji} {siteConfig.name}
           </Badge>
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-serif">
             {keyword.h1}
           </h1>
           <p class="text-lg md:text-xl text-white/90 mb-8 max-w-xl">
-            {hasUniqueContent ? handcraftedContent!.heroSubtitle : `Create magical ${keyword.title.toLowerCase()} moments at Friends Factory Cafe. Premium romantic celebration venue with stunning setups and unforgettable experiences.`}
+            {hasUniqueContent ? handcraftedContent!.heroSubtitle : `Create magical ${keyword.title.toLowerCase()} moments at ${siteConfig.name}. Premium romantic celebration venue with stunning setups and unforgettable experiences.`}
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -116,7 +116,7 @@ const faqItems = hasUniqueContent ? handcraftedContent!.faqs : generatedContent.
         <div class="lg:col-span-2">
           <article class="prose prose-lg max-w-none">
             <h2 class="text-2xl font-bold mb-6 font-serif">
-              {keyword.title} at Friends Factory Cafe
+              {keyword.title} at {siteConfig.name}
             </h2>
 
             {/* Introduction - from unique content */}
@@ -182,7 +182,7 @@ const faqItems = hasUniqueContent ? handcraftedContent!.faqs : generatedContent.
             )}
 
             <h3 class="text-xl font-bold mb-4">
-              Why Choose Friends Factory Cafe for {keyword.title}?
+              Why Choose {siteConfig.name} for {keyword.title}?
             </h3>
 
             <ul class="space-y-3 mb-8">

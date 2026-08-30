@@ -211,6 +211,7 @@ const cardClasses =
 
 <script>
   const WHATSAPP_NUMBER_ATTR = 'data-whatsapp-number';
+  const SITE_NAME_ATTR = 'data-site-name';
 
   function validatePhone(v: string) {
     return /^[6-9]\d{9}$/.test(v);
@@ -320,7 +321,8 @@ const cardClasses =
       const occasionLabel = momentLabels[data.occasion] || data.occasion;
       const timeLabel = timeLabels[data.preferredTime] || data.preferredTime;
 
-      let message = `*New Booking Inquiry - Friends Factory Cafe*\n\n`;
+      const siteName = document.body.getAttribute(SITE_NAME_ATTR) || '';
+      let message = `*New Booking Inquiry - ${siteName}*\n\n`;
       message += `*Name:* ${data.name}\n`;
       message += `*Phone:* ${data.phone}\n`;
       message += `*City:* ${data.city}\n`;

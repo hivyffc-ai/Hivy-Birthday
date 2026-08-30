@@ -28,8 +28,8 @@ const uniqueContent = getAreaContent(area.slug);
 
 const defaultFaqs = [
   {
-    question: `How do couples from ${area.name} reach Friends Factory Cafe?`,
-    answer: `Friends Factory Cafe is conveniently located in Surat and easily accessible from ${area.name}. You can reach us by car, auto, or cab in a short time. Contact us for exact directions.`,
+    question: `How do couples from ${area.name} reach ${siteConfig.name}?`,
+    answer: `${siteConfig.name} is conveniently located in Surat and easily accessible from ${area.name}. You can reach us by car, auto, or cab in a short time. Contact us for exact directions.`,
   },
   {
     question: 'Do you offer pickup services?',
@@ -87,7 +87,7 @@ const whatWeOffer = [
             Romantic Celebrations in {area.name}
           </h1>
           <p class="text-lg md:text-xl text-white/90 mb-8 max-w-xl">
-            {uniqueContent?.heroSubtitle || `Friends Factory Cafe brings premium romantic celebration experiences to couples in ${area.name}, Surat. Book birthday surprises, candlelight dinners, anniversaries & more!`}
+            {uniqueContent?.heroSubtitle || `${siteConfig.name} brings premium romantic celebration experiences to couples in ${area.name}, Surat. Book birthday surprises, candlelight dinners, anniversaries & more!`}
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -220,7 +220,7 @@ const whatWeOffer = [
             ) : (
               <>
                 <p class="text-gray-600 mb-6">
-                  Are you looking for the perfect romantic celebration venue near {area.name}, Surat? Friends Factory Cafe is your destination for creating unforgettable moments with your loved one.
+                  Are you looking for the perfect romantic celebration venue near {area.name}, Surat? {siteConfig.name} is your destination for creating unforgettable moments with your loved one.
                 </p>
                 <p class="text-gray-600 mb-6">
                   Whether you're celebrating a birthday, anniversary, proposal, or simply want a romantic candlelight dinner, our venue offers stunning rooftop setups and elegant glass houses that provide the perfect ambiance for your special moments.
@@ -258,7 +258,7 @@ const whatWeOffer = [
             {uniqueContent?.locationAdvantage && (
               <div class="mb-8">
                 <h3 class="text-xl font-bold mb-4">
-                  Getting to Friends Factory Cafe from {area.name}
+                  Getting to {siteConfig.name} from {area.name}
                 </h3>
                 <p class="text-gray-600">{uniqueContent.locationAdvantage}</p>
               </div>

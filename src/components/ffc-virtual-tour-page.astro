@@ -7,7 +7,7 @@ import Badge from '@/components/ui/badge.astro';
 import Button from '@/components/ui/button.astro';
 import Card from '@/components/ui/card.astro';
 import Icon from '@/components/Icon.astro';
-import { packages } from '@/lib/ffc-config';
+import { packages, siteConfig } from '@/lib/ffc-config';
 ---
 <div class="min-h-screen bg-white">
   <Header />
@@ -33,7 +33,7 @@ import { packages } from '@/lib/ffc-config';
       <div class="max-w-xs mx-auto">
         <div class="text-center mb-8">
           <h2 class="text-3xl font-bold font-serif mb-4">Watch Our Space</h2>
-          <p class="text-gray-600">Experience the magic of Friends Factory Cafe</p>
+          <p class="text-gray-600">Experience the magic of {siteConfig.name}</p>
         </div>
 
         <!-- Vertical Video -->
