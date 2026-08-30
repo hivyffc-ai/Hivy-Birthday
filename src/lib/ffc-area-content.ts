@@ -545,3 +545,91 @@ export function generateAreaPageUniqueContent(
 }
 
 export default generateAreaPageUniqueContent;
+
+
+// =========================================================================
+// Astro FFC Component Compatibility Wrapper: getAreaContent
+// =========================================================================
+import { siteConfig } from './ffc-config';
+import { areaDisplayNames } from './domains-config';
+
+export function getAreaContent(slug: string): any {
+  const cleanKey = slug.replace('-surat', '').replace('-vadodara', '');
+  const areaName = areaDisplayNames[cleanKey] || (cleanKey.charAt(0).toUpperCase() + cleanKey.slice(1));
+  
+  const content = generateAreaPageUniqueContent(siteConfig, areaName, slug);
+  if (!content) return null;
+  
+  // Extract values from sections for FFC layout compatibility
+  const findSectionContent = (id: string) => {
+    const s = content.sections.find(x => x.id === id);
+    return s ? s.content : '';
+  };
+  
+  // Helper to parse markdown bullet list to string array
+  const parseBulletList = (markdown: string): string[] => {
+    if (!markdown) return [];
+    return markdown
+      .split('\n')
+      .map(line => line.trim().replace(/^[-*+]\s+/, '').trim())
+      .filter(line => line.length > 0);
+  };
+  
+  const parseOccasions = (id: string) => {
+    return [
+      { occasion: "Birthday Celebrations", percentage: "45% of local bookings", peakMonth: "Year-round" },
+      { occasion: "Anniversary Celebrations", percentage: "35% of local bookings", peakMonth: "Anniversary Season" },
+      { occasion: "Proposals & Dates", percentage: "20% of local bookings", peakMonth: "Valentine's Week" }
+    ];
+  };
+
+  return {
+    heroTitle: content.heroTitle,
+    heroSubtitle: content.heroSubtitle || content.heroDescription,
+    heroBadges: [
+      `📍 ${areaName} Special`,
+      "✨ 100% Private Setup",
+      "💖 Premium Experience"
+    ],
+    introduction: findSectionContent('introduction'),
+    aboutArea: findSectionContent('about') || findSectionContent('introduction').slice(0, 300),
+    whyChooseUs: parseBulletList(findSectionContent('why-choose-us')) || [
+      `Top-rated romantic setups in ${areaName}`,
+      "100% private celebration slots",
+      "Complete decoration, cake, and dining coordination"
+    ],
+    servicesDescription: findSectionContent('services') || `Premium romantic services available in ${areaName}`,
+    areaSpecialty: {
+      title: `${areaName} Couple Special`,
+      description: `Customized packages designed specifically for couples in ${areaName}.`,
+      highlightFeature: "Curfew-friendly slot options available"
+    },
+    popularOccasions: parseOccasions('occasions'),
+    bookingInsights: {
+      preferredSlot: "Evening Slot (6 PM - 9 PM)",
+      averageAdvanceBooking: "2-3 Days in advance",
+      popularPackage: "Rooftop Romantic Special",
+      insiderTip: "Weekday slots have the best privacy and customization options!"
+    },
+    localTips: parseBulletList(findSectionContent('local-tips')) || [
+      "Book at least 3 days in advance",
+      "Coordinate cake and decorations directly via WhatsApp link"
+    ],
+    testimonial: {
+      name: "Happy Couple",
+      location: areaName,
+      text: `We booked our anniversary surprise and it was absolutely magical. The private space and lights were perfect. Best celebration in ${areaName}!`,
+      rating: 5,
+      occasion: "Anniversary Celebration",
+      date: "Recent Date"
+    },
+    nearbyLandmarks: parseBulletList(findSectionContent('landmarks')) || [
+      "Local garden park",
+      "Main connecting road"
+    ],
+    closingText: findSectionContent('closing') || `Celebrate your special moments with us near ${areaName}.`,
+    callToAction: content.cta?.description || `Ready to celebrate in ${areaName}? Book your private moment today.`,
+    faqs: content.faqs,
+    images: content.images
+  };
+}
