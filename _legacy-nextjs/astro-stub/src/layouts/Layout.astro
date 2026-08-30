@@ -1,0 +1,70 @@
+---
+import '../styles/globals.css';
+import { siteConfig } from '../lib/config';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  faqSchema?: Array<{ question: string; answer: string }>;
+  ogImage?: string;
+}
+
+const { title, description, canonical = Astro.url.href, breadcrumbs, faqSchema, ogImage = '/og-image.jpg' } = Astro.props;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org", "@type": "Restaurant",
+  "name": siteConfig.name, "alternateName": siteConfig.brandName,
+  "description": siteConfig.tagline, "url": siteConfig.website,
+  "telephone": siteConfig.phone, "email": siteConfig.email,
+  "address": { "@type": "PostalAddress", "streetAddress": "Adajan", "addressLocality": "Surat", "addressRegion": "Gujarat", "postalCode": "394510", "addressCountry": "IN" },
+  "geo": { "@type": "GeoCoordinates", "latitude": "21.1702", "longitude": "72.8311" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": siteConfig.rating, "reviewCount": siteConfig.reviewCount, "bestRating": "5", "worstRating": "1" },
+  "priceRange": "₹₹",
+  "hasOfferCatalog": { "@type": "OfferCatalog", "name": `${siteConfig.serviceName} Packages in ${siteConfig.city}`, "itemListElement": [{ "@type": "Offer", "name": `${siteConfig.serviceName} Package in Surat`, "price": "4900", "priceCurrency": "INR" }] },
+  "sameAs": [siteConfig.socialLinks.instagram, siteConfig.socialLinks.facebook]
+};
+
+const websiteSchema = { "@context": "https://schema.org", "@type": "WebSite", "name": siteConfig.name, "url": siteConfig.website };
+const breadcrumbSchema = breadcrumbs ? { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": breadcrumbs.map((item, idx) => ({ "@type": "ListItem", "position": idx + 1, "name": item.name, "item": item.url })) } : null;
+const faqSchemaObj = faqSchema && faqSchema.length > 0 ? { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqSchema.map(f => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } })) } : null;
+---
+
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="geo.region" content={siteConfig.geo.region} />
+  <meta name="geo.placename" content={siteConfig.geo.placename} />
+  <meta name="geo.position" content={siteConfig.geo.position} />
+  <meta name="ICBM" content={siteConfig.geo.icbm} />
+  <meta property="og:type" content="website" /><meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} /><meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} /><meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} />
+  {siteConfig.tracking.googleVerification && !siteConfig.tracking.googleVerification.startsWith('TODO') && (
+    <meta name="google-site-verification" content={siteConfig.tracking.googleVerification} />
+  )}
+  <script is:inline define:vars={{ GTM_ID: siteConfig.tracking.gtm }}>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',GTM_ID);
+  </script>
+  <script is:inline define:vars={{ PIXEL_ID: siteConfig.tracking.metaPixel }}>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',PIXEL_ID);fbq('track','PageView');
+  </script>
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+  {faqSchemaObj && <script type="application/ld+json" set:html={JSON.stringify(faqSchemaObj)} />}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body class="bg-white text-stone-900">
+  <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${siteConfig.tracking.gtm}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <slot />
+</body>
+</html>
