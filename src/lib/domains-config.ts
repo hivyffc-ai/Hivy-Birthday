@@ -43,7 +43,7 @@ export const suratAreas = [
 ];
 
 // ==================== VADODARA AREAS (40) ====================
-export const suratAreas = [
+export const vadodaraAreas = [
   "alkapuri", "akota", "fatehgunj", "sayajigunj", "vasna", "manjalpur", "waghodiaroad",
   "gotri", "sama", "karelibaug", "nizampura", "subhanpura", "ajwaroad", "oldpadraroad",
   "racecourse", "ellorapark", "harni", "tandalja", "bhayli", "sevasi", "chhani",
