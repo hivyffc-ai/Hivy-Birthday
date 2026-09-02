@@ -11,16 +11,16 @@ const navigation = [
   { name: 'Contact us', href: '/contact' },
 ];
 ---
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-rose-100">
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-amber-100">
   <nav class="container mx-auto px-4 py-2">
     <div class="flex h-20 items-center justify-between">
       <a href="/" class="flex flex-col">
-        <span class="text-2xl md:text-3xl font-serif font-bold text-rose-800 leading-tight">HIVY</span>
+        <span class="text-2xl md:text-3xl font-serif font-bold text-amber-800 leading-tight">HIVY</span>
       </a>
 
       <div class="hidden lg:flex items-center gap-8">
         {navigation.map((item) => (
-          <a href={item.href} class="text-gray-700 hover:text-rose-700 font-medium transition-colors">
+          <a href={item.href} class="text-gray-700 hover:text-amber-700 font-medium transition-colors">
             {item.name}
           </a>
         ))}
@@ -28,10 +28,10 @@ const navigation = [
 
       <div class="flex items-center gap-4">
         <div class="hidden md:flex items-center gap-3">
-          <Icon name="heart" class="h-8 w-8 text-rose-500" fill="currentColor" />
+          <Icon name="heart" class="h-8 w-8 text-amber-500" fill="currentColor" />
           <div class="text-right">
             <p class="text-xs text-gray-500">Call and Book in Minutes</p>
-            <a href={`tel:${siteConfig.phone}`} class="text-lg font-bold text-rose-700 hover:text-rose-800">
+            <a href={`tel:${siteConfig.phone}`} class="text-lg font-bold text-amber-700 hover:text-amber-800">
               {siteConfig.phone}
             </a>
           </div>
@@ -62,7 +62,7 @@ const navigation = [
   >
     <div class="flex flex-col h-full">
       <div class="flex items-center justify-between py-4 px-4 border-b">
-        <span class="font-serif font-bold text-rose-800 text-xl">{siteConfig.name}</span>
+        <span class="font-serif font-bold text-amber-800 text-xl">{siteConfig.name}</span>
         <button type="button" id="mobile-menu-close" aria-label="Close menu" class="inline-flex items-center justify-center size-9 rounded-md hover:bg-accent">
           <Icon name="x" class="h-5 w-5" />
         </button>
@@ -73,7 +73,7 @@ const navigation = [
           {navigation.map((item) => (
             <a
               href={item.href}
-              class="mobile-menu-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-rose-700 hover:bg-rose-50 rounded-lg transition-colors"
+              class="mobile-menu-link block px-4 py-3 text-lg font-medium text-gray-700 hover:text-amber-700 hover:bg-amber-50 rounded-lg transition-colors"
             >
               {item.name}
             </a>
@@ -84,7 +84,7 @@ const navigation = [
       <div class="border-t py-4 px-4">
         <a
           href={`tel:${siteConfig.phone}`}
-          class="flex items-center gap-3 px-4 py-3 bg-rose-700 text-white rounded-lg hover:bg-rose-800 transition-colors"
+          class="flex items-center gap-3 px-4 py-3 bg-amber-700 text-white rounded-lg hover:bg-amber-800 transition-colors"
         >
           <Icon name="phone" class="h-5 w-5" />
           <span class="font-medium">{siteConfig.phone}</span>

@@ -52,14 +52,14 @@ export const siteConfig = {
   city: "Surat",
   website: "https://birthdaysurprisesurat.com",
   colors: {
-    primary: "#BE123C", // Romantic Rose
-    secondary: "#FB7185", // Light Rose
-    accent: "#9F1239",
-    gradient: "from-rose-700 to-rose-600",
-    gradientHover: "from-rose-800 to-rose-700",
-    lightBg: "bg-rose-50",
-    darkBg: "bg-rose-900",
-    text: "text-rose-700"
+    primary: "#B45309", // Warm Amber
+    secondary: "#F59E0B", // Light Amber
+    accent: "#92400E",
+    gradient: "from-amber-700 to-amber-600",
+    gradientHover: "from-amber-800 to-amber-700",
+    lightBg: "bg-amber-50",
+    darkBg: "bg-amber-900",
+    text: "text-amber-700"
   },
   socialLinks: {
     instagram: "https://www.instagram.com/hivy_placeforcelebration/?hl=en",

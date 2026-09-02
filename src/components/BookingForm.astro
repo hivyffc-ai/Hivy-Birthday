@@ -51,7 +51,7 @@ const cardClasses =
 <div id={formId} class={cardClasses} data-booking-form data-page-title={pageTitle} data-package-name={packageName}>
   <div data-form-body>
     {variant !== 'modal' && (
-      <div class={`${variant === 'hero' ? 'bg-gradient-to-r from-rose-700/95 to-amber-600/95' : 'bg-gradient-to-r from-rose-700 to-amber-600'} p-4 text-white -mt-6`}>
+      <div class={`${variant === 'hero' ? 'bg-gradient-to-r from-amber-700/95 to-amber-600/95' : 'bg-gradient-to-r from-amber-700 to-amber-600'} p-4 text-white -mt-6`}>
         <h3 class="text-xl flex items-center gap-2 font-semibold leading-none">
           <Icon name="gift" class="h-5 w-5" />
           Reserve Your Moment
@@ -63,7 +63,7 @@ const cardClasses =
     {variant === 'modal' && (
       <div class="flex justify-between items-center p-4 border-b -mt-6">
         <div>
-          <h3 class="text-xl text-rose-700 font-semibold leading-none">Reserve Now</h3>
+          <h3 class="text-xl text-amber-700 font-semibold leading-none">Reserve Now</h3>
           <p class="text-muted-foreground text-sm">Get instant confirmation on WhatsApp</p>
         </div>
         <button type="button" data-close-modal class="inline-flex items-center justify-center size-9 rounded-md hover:bg-accent hover:text-accent-foreground">
@@ -76,7 +76,7 @@ const cardClasses =
       <form data-booking-form-el class="space-y-4" novalidate>
         <div class="space-y-2">
           <label for={`${formId}-name`} class="flex items-center gap-2 text-sm leading-none font-medium">
-            <Icon name="user" class="h-4 w-4 text-rose-700" />
+            <Icon name="user" class="h-4 w-4 text-amber-700" />
             Your Name *
           </label>
           <input
@@ -90,7 +90,7 @@ const cardClasses =
 
         <div class="space-y-2">
           <label for={`${formId}-phone`} class="flex items-center gap-2 text-sm leading-none font-medium">
-            <Icon name="phone" class="h-4 w-4 text-rose-700" />
+            <Icon name="phone" class="h-4 w-4 text-amber-700" />
             Phone Number *
           </label>
           <input
@@ -106,7 +106,7 @@ const cardClasses =
 
         <div class="space-y-2">
           <label for={`${formId}-city`} class="flex items-center gap-2 text-sm leading-none font-medium">
-            <Icon name="map-pin" class="h-4 w-4 text-rose-700" />
+            <Icon name="map-pin" class="h-4 w-4 text-amber-700" />
             City *
           </label>
           <input
@@ -137,7 +137,7 @@ const cardClasses =
 
           <div class="space-y-2">
             <label class="flex items-center gap-2 text-sm font-medium">
-              <Icon name="gift" class="h-4 w-4 text-rose-700" />
+              <Icon name="gift" class="h-4 w-4 text-amber-700" />
               Your Moment *
             </label>
             <select
@@ -156,7 +156,7 @@ const cardClasses =
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div class="space-y-2">
             <label for={`${formId}-date`} class="flex items-center gap-2 text-sm font-medium">
-              <Icon name="calendar" class="h-4 w-4 text-rose-700" />
+              <Icon name="calendar" class="h-4 w-4 text-amber-700" />
               Select Date *
             </label>
             <input
@@ -171,7 +171,7 @@ const cardClasses =
 
           <div class="space-y-2">
             <label class="flex items-center gap-2 text-sm font-medium">
-              <Icon name="clock" class="h-4 w-4 text-rose-700" />
+              <Icon name="clock" class="h-4 w-4 text-amber-700" />
               Preferred Time *
             </label>
             <select
@@ -190,7 +190,7 @@ const cardClasses =
         <button
           type="submit"
           data-submit-btn
-          class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-to-r from-rose-700 to-amber-600 hover:from-rose-800 hover:to-rose-900 text-white py-5 text-base font-semibold mt-2 transition-all disabled:pointer-events-none disabled:opacity-50"
+          class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-to-r from-amber-700 to-amber-600 hover:from-amber-800 hover:to-amber-900 text-white py-5 text-base font-semibold mt-2 transition-all disabled:pointer-events-none disabled:opacity-50"
         >
           <Icon name="message-circle" class="h-5 w-5" data-icon-idle />
           <svg data-icon-loading class="h-5 w-5 animate-spin hidden" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="4"/></svg>
@@ -201,8 +201,8 @@ const cardClasses =
   </div>
 
   <div data-form-success class="hidden py-12 text-center px-6">
-    <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-rose-100">
-      <Icon name="check-circle" class="h-8 w-8 text-rose-700" />
+    <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-amber-100">
+      <Icon name="check-circle" class="h-8 w-8 text-amber-700" />
     </div>
     <h3 class="text-xl font-semibold mb-2">Booking Request Sent!</h3>
     <p class="text-muted-foreground">We've opened WhatsApp for you. Complete your booking there!</p>

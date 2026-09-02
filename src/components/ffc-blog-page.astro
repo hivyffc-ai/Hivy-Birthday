@@ -23,10 +23,10 @@ function formatDate(dateStr: string, opts: Intl.DateTimeFormatOptions) {
   <Header />
 
   {/* Hero Section */}
-  <section class="pt-24 pb-12 bg-gradient-to-br from-rose-50 via-orange-50 to-rose-100">
+  <section class="pt-24 pb-12 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100">
     <div class="container mx-auto px-4">
       <div class="text-center max-w-3xl mx-auto">
-        <Badge class="bg-rose-100 text-rose-900 mb-4">Our Blog</Badge>
+        <Badge class="bg-amber-100 text-amber-900 mb-4">Our Blog</Badge>
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           Celebration Ideas & Inspiration
         </h1>
@@ -42,11 +42,11 @@ function formatDate(dateStr: string, opts: Intl.DateTimeFormatOptions) {
   <section class="py-6 border-b">
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap justify-center gap-2">
-        <Badge variant="outline" class="cursor-pointer hover:bg-rose-50 px-4 py-2">
+        <Badge variant="outline" class="cursor-pointer hover:bg-amber-50 px-4 py-2">
           All Posts
         </Badge>
         {categories.map((category) => (
-          <Badge variant="outline" class="cursor-pointer hover:bg-rose-50 px-4 py-2">
+          <Badge variant="outline" class="cursor-pointer hover:bg-amber-50 px-4 py-2">
             {category}
           </Badge>
         ))}
@@ -66,13 +66,13 @@ function formatDate(dateStr: string, opts: Intl.DateTimeFormatOptions) {
                 alt={featuredPost.title}
                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <Badge class="absolute top-4 left-4 bg-rose-500">Featured</Badge>
+              <Badge class="absolute top-4 left-4 bg-amber-500">Featured</Badge>
             </div>
             <Card slot="content" class="p-8 flex flex-col justify-center border-0 shadow-none">
               <Badge variant="outline" class="w-fit mb-4">
                 {featuredPost.category}
               </Badge>
-              <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-rose-700 transition-colors">
+              <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-amber-700 transition-colors">
                 {featuredPost.title}
               </h2>
               <p class="text-gray-600 mb-6 line-clamp-3">
@@ -88,7 +88,7 @@ function formatDate(dateStr: string, opts: Intl.DateTimeFormatOptions) {
                   {featuredPost.readTime} read
                 </span>
               </div>
-              <Button class="w-fit bg-gradient-to-r from-rose-700 to-amber-600 hover:from-rose-800 hover:to-rose-900">
+              <Button class="w-fit bg-gradient-to-r from-amber-700 to-amber-600 hover:from-amber-800 hover:to-amber-900">
                 Read Article <Icon name="arrow-right" class="w-4 h-4 ml-2" />
               </Button>
             </Card>
@@ -112,12 +112,12 @@ function formatDate(dateStr: string, opts: Intl.DateTimeFormatOptions) {
                   alt={post.title}
                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <Badge class="absolute top-3 left-3 bg-rose-500">
+                <Badge class="absolute top-3 left-3 bg-amber-500">
                   {post.category}
                 </Badge>
               </div>
               <Card slot="content" class="p-5 border-0 shadow-none">
-                <h3 class="font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-rose-700 transition-colors">
+                <h3 class="font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-amber-700 transition-colors">
                   {post.title}
                 </h3>
                 <p class="text-sm text-gray-600 mb-4 line-clamp-2">
@@ -142,17 +142,17 @@ function formatDate(dateStr: string, opts: Intl.DateTimeFormatOptions) {
   </section>
 
   {/* CTA Section */}
-  <section class="py-16 bg-gradient-to-r from-rose-700 to-amber-600">
+  <section class="py-16 bg-gradient-to-r from-amber-700 to-amber-600">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold text-white mb-4">
         Ready to Plan Your Celebration?
       </h2>
-      <p class="text-rose-100 mb-8 max-w-2xl mx-auto">
+      <p class="text-amber-100 mb-8 max-w-2xl mx-auto">
         Turn your special moments into unforgettable memories at {siteConfig.name},
         Surat's premier rooftop celebration venue.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button size="lg" class="bg-white text-rose-700 hover:bg-rose-50" as="a" href="/packages">
+        <Button size="lg" class="bg-white text-amber-700 hover:bg-amber-50" as="a" href="/packages">
           View Packages
         </Button>
         <Button
