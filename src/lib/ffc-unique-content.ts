@@ -73,7 +73,7 @@ Your boyfriend deserves more than a regular dinner out. Our private venue gives 
 
 **Cool & Romantic Vibe**: Our boyfriend birthday setups strike the perfect balance – romantic enough to be special, but relaxed enough for him to feel comfortable. No over-the-top frills, just genuine romance.
 
-**His Favorite Things**: Tell us what he loves – his favorite colors, preferred snacks, or meaningful songs – and we incorporate them into his birthday celebration. Personal touches make boyfriend birthday surprises unforgettable.
+**His Favorite Things**: Tell us what he loves – his favorite colors, preferred meal, or meaningful songs – and we incorporate them into his birthday celebration. Personal touches make boyfriend birthday surprises unforgettable.
 
 **Photo-Ready Moments**: Even if he's not big on photos, he'll want to capture this birthday. Our boyfriend birthday setups are designed to look amazing on camera, giving you both memories to cherish.
 

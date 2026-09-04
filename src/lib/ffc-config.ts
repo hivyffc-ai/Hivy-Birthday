@@ -73,7 +73,7 @@ export const packages: SetupPackage[] = [
   {
     id: "setup-1",
     slug: "tent-of-romance",
-    name: "Tent of Romance",
+    name: "Tent of Romance (Indoor)",
     emoji: "⛺💕✨",
     shortDescription: "Step into a cozy romantic tent where love blooms under soft lights and dreamy décor ✨",
     fullDescription: `⛺💕✨ Tent of Romance @ ₹6500/- only — where intimacy meets elegance, and every moment feels wrapped in love
@@ -155,7 +155,7 @@ Romantic Proposal Surat | Anniversary Celebration | Birthday Surprise | Candleli
   {
     id: "setup-2",
     slug: "fairy-tale-proposals",
-    name: "Fairy Tale Proposals",
+    name: "Fairy Tale Proposals (Indoor)",
     emoji: "🧚✨💍",
     shortDescription: "Step into a magical fairytale where dreams come true and love stories begin ✨",
     fullDescription: `🧚✨💍 Fairy Tale Proposals @ ₹6300/- — where every moment feels like a dream, and love stories get their perfect beginning
@@ -232,7 +232,7 @@ Romantic Proposal Surat | Anniversary Celebration | Birthday Surprise | Candleli
   {
     id: "setup-3",
     slug: "swing-of-love",
-    name: "Swing of LOVE",
+    name: "Swing of LOVE (Indoor)",
     emoji: "🪽💕",
     shortDescription: "Float in love on a dreamy swing setup where romance meets playfulness ✨",
     fullDescription: `🪽💕 Swing of LOVE @ ₹5100/- — where love takes flight, moments feel lighter, and hearts swing together in perfect harmony
@@ -308,7 +308,7 @@ Romantic Proposal Surat | Anniversary Celebration | Birthday Surprise | Candleli
   {
     id: "setup-4",
     slug: "boho-chic",
-    name: "BoHo Chic",
+    name: "BoHo Chic (Indoor)",
     emoji: "🌾🪶✨",
     shortDescription: "Embrace free-spirited romance in a bohemian paradise filled with warmth and elegance ✨",
     fullDescription: `🌾🪶✨ BoHo Chic @ ₹5700/- — where bohemian vibes meet romantic elegance, and every moment feels effortlessly beautiful
@@ -388,7 +388,7 @@ Romantic Proposal Surat | Anniversary Celebration | Birthday Surprise | Candleli
   {
     id: "setup-5",
     slug: "twin-heart",
-    name: "TwinHeart",
+    name: "TwinHeart (Indoor)",
     emoji: "💕💕",
     shortDescription: "Celebrate love with twin hearts symbolizing two souls becoming one ✨",
     fullDescription: `💕💕 TwinHeart @ ₹4700/- only — where two hearts beat as one, and love is celebrated in its purest form
@@ -465,7 +465,7 @@ Romantic Proposal Surat | Anniversary Celebration | Birthday Surprise | Candleli
   {
     id: "setup-6",
     slug: "the-elite-group-setup",
-    name: "Elite Group Setup",
+    name: "Elite Group Setup (Indoor)",
     emoji: "💍✨",
     shortDescription: "Create a one-of-a-kind proposal experience tailored just for your love story ✨",
     fullDescription: `💍✨ Elite Group Setup — where your unique love story gets the perfect setting it deserves
