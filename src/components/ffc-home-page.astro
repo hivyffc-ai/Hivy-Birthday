@@ -106,6 +106,9 @@ const galleryItems = [
   { type: 'image', src: '/hivy-images/6500/2.webp', alt: 'Tent of Romance setup photo', title: 'Tent of Romance', featured: false },
   { type: 'image', src: '/hivy-images/6500/3.webp', alt: 'Tent of Romance setup photo', title: 'Tent of Romance', featured: false },
 ];
+const photoCount = galleryItems.filter((item) => item.type === 'image').length;
+const videoCount = galleryItems.filter((item) => item.type === 'video').length;
+const posts = getAllBlogPosts().slice(0, 6);
 
 const reviews = [
   { initial: 'D', avatarClass: 'bg-cyan-500', name: 'Devanshi', time: '3 weeks ago', text: 'Such a great time!!!! Thanks to my hubby and the team of friends factory cafe!!!' },
@@ -114,6 +117,11 @@ const reviews = [
   { initial: 'K', avatarClass: 'bg-purple-500', name: 'Krishn Sharma', time: '2 months ago', text: 'Best candlelight dinner experience in Surat! The decoration was stunning. Proposed here and she said YES! 💍' },
   { initial: 'P', avatarClass: 'bg-pink-500', name: 'Priya Shah', time: '2 months ago', text: 'My husband surprised me here for our anniversary. The rooftop setup was magical! Highly recommend! ❤️' },
   { initial: 'R', avatarClass: 'bg-blue-500', name: 'Rahul Desai', time: '3 months ago', text: "Best place for couples in Surat! Booked for my wife's birthday. Glass house setup was Instagram-perfect!" },
+];
+
+const heroSlides = [
+  { src: '/images/hero/slider1.webp', alt: 'Birthday Surprise Setup at HIVY Surat' },
+  { src: '/images/hero/slider2.webp', alt: 'Romantic Celebration Setup with Fairy Lights Surat' },
 ];
 ---
 <div class="min-h-screen bg-white">

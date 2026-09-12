@@ -1,9 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "@fontsource/playfair-display/400.css";
-@import "@fontsource/playfair-display/500.css";
-@import "@fontsource/playfair-display/600.css";
-@import "@fontsource/playfair-display/700.css";
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/500.css";
 @import "@fontsource/inter/600.css";
@@ -108,7 +105,31 @@
 /* Friends Factory Cafe typography */
 @theme inline {
   --font-sans: "Inter", "sans-serif";
-  --font-serif: "Playfair Display", "serif";
+  --font-serif: "Baloo 2", "serif";
+
+  /* birthday palette reskin */
+  --color-amber-50: #FFFBF0;
+  --color-amber-100: #FEF6DC;
+  --color-amber-200: #FDECB4;
+  --color-amber-300: #FCE083;
+  --color-amber-400: #FAD24C;
+  --color-amber-500: #F9C51A;
+  --color-amber-600: #E0AD06;
+  --color-amber-700: #B88E05;
+  --color-amber-800: #957304;
+  --color-amber-900: #775C03;
+  --color-amber-950: #4B3A02;
+  --color-orange-50: #FDF1F6;
+  --color-orange-100: #FBDFEA;
+  --color-orange-200: #F7BAD3;
+  --color-orange-300: #F28CB5;
+  --color-orange-400: #ED5A95;
+  --color-orange-500: #E82C77;
+  --color-orange-600: #CF1760;
+  --color-orange-700: #AA134F;
+  --color-orange-800: #8A0F40;
+  --color-orange-900: #6E0C33;
+  --color-orange-950: #450820;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
